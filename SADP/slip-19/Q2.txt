@@ -1,0 +1,39 @@
+Linux terminal use:
+
+    ls: Lists files and directories present in the current working directory.
+
+    cd: Changes the current directory to the specified path.
+
+    touch: Creates a new empty file, or updates the timestamp of an existing file.
+
+    mv: Moves files or directories to a new location, or renames them.
+
+    rm: Removes (deletes) files or directories.
+
+    man: Displays the manual page for a command, providing detailed usage and options.
+
+    mkdir: Creates a new directory with the specified name.
+
+    rmdir: Removes (deletes) empty directories.
+
+    tar: Archives multiple files into one using the tarball format; can also extract or list files from tar archives.
+
+    gzip: Compresses files using the gzip algorithm, or decompresses gzip-compressed files.
+
+    cat: Displays the content of files in the terminal, or concatenates files.
+
+    more: Views file content page by page in the terminal (forward navigation only).
+
+    less: Views file content page by page, allowing forward and backward navigation; more flexible than more.
+
+    ps: Lists currently running processes on the system with details like PID, TTY, and CPU usage.
+
+    sudo: Allows a permitted user to execute a command as the superuser (administrator) or another user, for elevated permissions.
+
+    cron: Schedules tasks to run at specified times or intervals automatically (uses crontab).
+
+    chown: Changes the ownership of files or directories to a specified user.
+
+    chgrp: Changes the group ownership of files or directories to a specified group.
+
+    ping: Sends network packets to a host to test connectivity and measure response time
