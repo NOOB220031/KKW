@@ -1,16 +1,15 @@
 #include <ESP8266WiFi.h>  
-// Replace with your actual Wi-Fi credentials 
-const char* ssid = "RedmiNote8Pro";        
-// Enter your Wi-Fi name (SSID) 
-const char* password =  "12345678"; //    Enter your Wi-Fi password  
+
+const char* ssid = "RedmiNote8Pro";         
+const char* password =  "12345678";
 
 void setup() {    
     Serial.begin(115200);    
     delay(100);        
-    // Start Wi-Fi  Connection  
+    
     Serial.println();  
     Serial.println("Connecting to WiFi...");  
-    WiFi.begin(ssid, password);  // Connect to WiFi    // Wait until connected  
+    WiFi.begin(ssid, password);
     
     while (WiFi.status() != WL_CONNECTED) {     
         delay(500);  
@@ -24,5 +23,4 @@ void setup() {
 }  
 
 void loop() {  
-    // You can add tasks here that require WiFi connection 
 } 

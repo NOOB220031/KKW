@@ -1,15 +1,15 @@
 int vibrationSensorPin = A0; 
-int  counter;          // count n samples  
+int  counter;         
 int newValue; 
 int minValue; 
 int maxValue; 
 
 void setup()  {  
     Serial.begin(115200);  
-    counter = 0;                  // start at the begin  
+    counter = 0;                 
     minValue = analogRead(vibrationSensorPin);    
     maxValue = analogRead(vibrationSensorPin); 
-    // give them a value from the sensor to start with 
+  
 
 }  
 
@@ -33,9 +33,9 @@ void loop()   {
         else  
             Serial.println("finger NOT deteced");  
         
-            counter = 0;                // start at the begin  
+            counter = 0;                 
         minValue = analogRead(vibrationSensorPin);     
-        maxValue = analogRead(vibrationSensorPin); // give them a value from the sensor to start with  
+        maxValue = analogRead(vibrationSensorPin); 
     }  
     delay( 20);        
 }

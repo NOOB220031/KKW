@@ -1,13 +1,11 @@
-#include <DHT.h>  
-/*  Interfacing Temperature and Humidity Sensor (DHT11)-using One Wire 
-Protocol */  
 #include<DHT.h>                    
+
 #define DHTTYPE DHT11          
+
 int dhtSensorPin = 6;  
-//define library for sensor  
-//define macro  
+
 DHT dht(dhtSensorPin, DHTTYPE);      
-//pin initialization 
+
 float t, h;  
 
 void setup()  {  
@@ -17,7 +15,7 @@ void setup()  {
     delay(2000);  
 }  
 void loop() { 
-    t = dht.readTemperature();  //object to read the sensor value 
+    t = dht.readTemperature(); 
     Serial.print("Temperature="); 
     Serial.println(t); 
     

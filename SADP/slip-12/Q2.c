@@ -2,14 +2,14 @@
 
 void setup() {  
   Serial.begin(115200);  
-  WiFi.disconnect();  // disconnect previously connected access point    
-delay(200); // delay 200ms  
+  WiFi.disconnect();     
+delay(200); 
   
   Serial.println("***** WiFi Scan Started *****");  
 }  
   
 void loop() {  
-   int n = WiFi.scanNetworks(); // WiFi.scanNetworks will return the number of networks found  
+   int n = WiFi.scanNetworks();
      
   Serial.println("Scan done");  
     
@@ -21,12 +21,12 @@ else
     Serial.println(" Networks found");  
     for (int i = 0; i < n; ++i)  
     {  
-      // Print SSID, RSSI, MAC, Encryption for each network found  
-      Serial.print(i + 1);  //Sr. No  
+      
+      Serial.print(i + 1);  
       Serial.print(": ");  
-      Serial.print(WiFi.SSID(i)); //SSID  
+      Serial.print(WiFi.SSID(i));   
       Serial.print(" (");  
-      Serial.print(WiFi.RSSI(i)); //Signal Strength  
+      Serial.print(WiFi.RSSI(i));
       Serial.print(") MAC:");  
       Serial.print(WiFi.BSSIDstr(i));  
       Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE)? " Unsecured" : " Secured"  
@@ -36,5 +36,5 @@ else
   }  
   Serial.println("");  
   
-  delay(6000); // delay 6sec   
+  delay(6000);
 }

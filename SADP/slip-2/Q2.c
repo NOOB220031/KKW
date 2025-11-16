@@ -9,12 +9,13 @@ void loop() {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
-  // set the trigger pin high to provide a bus;
+  
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  int duration =
-      pulseIn(echoPin, HIGH);  // used to check duration of wave (tx & rx); int
-  distance = duration * 0.034 / 2;
+  int duration =    pulseIn(echoPin, HIGH);
+  
+  int distance = duration * 0.034 / 2;
+  
   Serial.print("Distance in cm is: ");
   Serial.println(distance);
   delay(100);
