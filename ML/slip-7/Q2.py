@@ -9,27 +9,21 @@ print("First 5 rows of dataset:")
 print(df.head())
 
 X = df[['Temperature', 'Humidity', 'Wind_Speed', 'Cloud_Cover', 'Pressure']]
-y = df['Rain']  # Target column
+y = df['Rain']
 
-# Convert target to numeric codes (rain=1, no rain=0)
 y = y.map({'rain': 1, 'no rain': 0})
 
-# Split dataset (70% train, 30% test)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Initialize Gaussian Naive Bayes model
 model = GaussianNB()
 model.fit(X_train, y_train)
 
-# Predict on test data
 y_pred = model.predict(X_test)
 
-# Evaluate
 print(f"\nAccuracy: {accuracy_score(y_test, y_pred):.2f}")
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("\nClassification Report:\n", classification_report(y_test, y_pred, target_names=['no rain', 'rain']))
 
-# Example: predict new data
 sample = pd.DataFrame({
     'Temperature': [26],
     'Humidity': [70],

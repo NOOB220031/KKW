@@ -4,29 +4,24 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score
 
-# Load dataset
 df = pd.read_csv("./CSV/Salary_positions.csv")
 
-# Features and target
 X = df[['Level']]
 y = df['Salary']
 
-# Polynomial transformation (degree 4)
 poly_features = PolynomialFeatures(degree=4)
 X_poly = poly_features.fit_transform(X)
 
-# Fit Polynomial Regression
 poly_reg = LinearRegression()
 poly_reg.fit(X_poly, y)
 
-# Predictions for the dataset
+
 y_pred_poly = poly_reg.predict(X_poly)
 
-# Evaluate model
 r2 = r2_score(y, y_pred_poly)
 print(f"Polynomial Regression R² Score: {r2:.4f}")
 
-# Use same column name as training data
+
 level_11 = pd.DataFrame({'Level': [11]})
 level_12 = pd.DataFrame({'Level': [12]})
 

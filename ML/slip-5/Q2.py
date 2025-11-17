@@ -6,40 +6,30 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-# Load iris dataset
 iris = load_iris()
 
-# Create DataFrame for better readability
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 df['species'] = iris.target
 
 print("First few rows of the Iris dataset:")
 print(df.head())
 
-# Features (X) and target (y)
 X = df[iris.feature_names]
 y = df['species']
 
-# Split dataset into train (80%) and test (20%)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Initialize KNN model (k=5)
 knn = KNeighborsClassifier(n_neighbors=5)
-
-# Train model
 knn.fit(X_train, y_train)
 
-# Predict on test set
 y_pred = knn.predict(X_test)
 
-# Evaluate model
 accuracy = accuracy_score(y_test, y_pred)
 print(f"\nModel Accuracy: {accuracy:.2f}")
 
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred, target_names=iris.target_names))
 
-# Confusion Matrix
 cm = confusion_matrix(y_test, y_pred)
 print("\nConfusion Matrix:")
 print(cm)
